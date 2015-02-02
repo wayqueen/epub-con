@@ -1,0 +1,122 @@
+#content{
+font-family : sans-serif,Calibri,Arial;
+margin: 5px 18px;
+}
+
+div>p{
+text-indent : 25px;
+text-align : justify;
+}
+
+
+.no-heading{
+display : none;
+}
+p{
+text-align : justify;
+}
+
+img.frameGraphics  
+{
+}
+
+p.Gambar {text-align:center;margin-left:0;margin-right:0;margin-top:8.016px;margin-bottom:8.016px;border:none;padding:0;color:#00A3D7;text-indent: 0}
+     
+p.Contents1 {margin-left:0;margin-right:0;margin-top:0;border:none;padding:0;text-indent:0;}
+     
+p.Contents3 {margin-left:37.718403px;margin-right:0;margin-top:0;border:none;padding:0;text-indent:0;}
+ 
+p.Contents2 {margin-left:18.864px;margin-right:0;margin-top:0;border:none;padding:0;text-indent:0;}
+
+.img_head{
+}
+
+.frameGraphics {margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;border:none;padding:0;}
+     
+.frameFrame {text-align:center;margin-left:7.5936px;margin-right:7.5936px;margin-top:7.5936px;margin-bottom:7.5936px;padding:5.6735997px;font-size:16.0px}
+
+.frameGraphics p {margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;}
+
+.frameFrame p {margin-left:7.5936px;margin-right:7.5936px;margin-top:7.5936px;margin-bottom:7.5936px;}
+
+p.hangingIndent{
+	padding-left: 22px;
+	text-indent:-22px;
+}
+.glossarium td:first-child{
+	width:132px;
+}
+
+.glossarium td:last-child{
+	padding-left: 10px;
+}
+
+.glossarium td{
+	vertical-align: top;
+}
+
+h2, h3{
+	color:#00A3D7;
+}
+
+.tabel11 th, .tabel11 td {
+	padding:0 0.5em;
+}
+.tabel11 td{
+	background-color: #FFFCDE;
+}
+.tabel11 th{
+	background-color: #FBCBB7;
+}
+.tabel11 th p{
+	text-align: center;
+}
+.tabel11, .tabel11 th, .tabel11 td{
+	border: 1px solid #000;
+}
+.small{
+	font-size: 9px;
+}
+.title{
+	text-align:center;color:#00A3D7;font-size:18px;
+}
+.story{
+	background-color: #E0F3F7;
+	padding: 1em;
+}
+
+p.hangingIndent{
+	padding-left: 22px;
+	text-indent:-22px;
+}
+.glossarium td:first-child{
+	width:132px;
+}
+
+.glossarium td:last-child{
+	padding-left: 10px;
+}
+
+.glossarium td{
+	vertical-align: top;
+}
+
+.center{
+	text-align: center;
+}
+
+.right{
+	text-align: right;
+}
+
+.left{
+	text-align: left;
+}
+p .info_left{
+	float: left;
+	margin: 1px 10px 1px 5px;
+	display: block;
+}
+ol li{
+	text-indent: 0;
+}
