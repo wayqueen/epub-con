@@ -15,13 +15,27 @@ module.exports = function(grunt) {
     replace: {
       epub: {
         src: ['../OEBPS/*.xhtml'],     // only search on xhtml files
-        overwrite: true,            // destination directory or file
+        overwrite: true,               // destination directory or file
         replacements: [{
-          from: '</b><b>',                                    // remove bugging </b><b>
+          // remove separated inline tag which should be 
+          from: /<\/(b|i)>[ \n\r\t]*<(b|i)>/g,
           to: ''
         }, {
-          from: /(\sstyle=("|\')(.*?)("|\'))([a-z ]*)/g,      // remove inline style using regex
+          // remove empty element: p|li|ol|b|i
+          from: /<(p|li|ol|b|i)[^>]*>[ \n\r\t]*<\/(p|li|ol|b|i)>/g,
           to: ''
+        }, {
+          // remove inline style using regex
+          from: /(\sstyle=("|\')(.*?)("|\'))([a-z ]*)/g,      
+          to: ''
+        }, {
+          // flatten 2 level of ol
+          from: /<(ol)[^>]*>[ \n\r\t]*<(ol)[^>]*>/g,      
+          to: '<ol>'
+        }, {
+          // flatten 2 level of /ol
+          from: /<\/(ol)>[ \n\r\t]*<\/(ol)>/g,      
+          to: '</ol>'
         }]
       }
     },
@@ -53,7 +67,7 @@ module.exports = function(grunt) {
       styles: {
         files: [
           // includes files within path
-          {expand: false, src: ['OEBPS/*'], dest: '../', filter: 'isFile'},
+          // {expand: false, src: ['OEBPS/*'], dest: '../', filter: 'isFile'},
           // {expand: true, src: ['excercises.css'], dest: '../OEBPS/', filter: 'isFile'},
         ],
       },
