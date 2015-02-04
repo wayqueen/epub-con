@@ -14,7 +14,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     replace: {
       epub: {
-        src: ['../result/OEBPS/*.xhtml'],     // only search on xhtml files
+        src: ['../epub-con-result/OEBPS/*.xhtml'],     // only search on xhtml files
         overwrite: true,               // destination directory or file
         replacements: [{
           // combine multiple inline tag as one tag
@@ -58,14 +58,14 @@ module.exports = function(grunt) {
     copy: {
       workFiles: {
         files: [
-          {expand: true, cwd: '../', src: ['META-INF/**'], dest: '../result/'},
-          {expand: true, cwd: '../', src: ['OEBPS/**'], dest: '../result/'},
-          {expand: true, cwd: '../', src: ['mimetype'], dest: '../result/'},
+          {expand: true, cwd: '../', src: ['META-INF/**'], dest: '../epub-con-result/'},
+          {expand: true, cwd: '../', src: ['OEBPS/**'], dest: '../epub-con-result/'},
+          {expand: true, cwd: '../', src: ['mimetype'], dest: '../epub-con-result/'},
         ]
       },
       styles: {
         files: [
-          {expand: true, src: ['OEBPS/*'], dest: '../result/', filter: 'isFile'},
+          {expand: true, src: ['OEBPS/*'], dest: '../epub-con-result/', filter: 'isFile'},
         ],
       },
     },
@@ -77,9 +77,9 @@ module.exports = function(grunt) {
           mode: 'zip'
         },
         files: [
-          {expand: true, cwd: '../result/', src: ['./META-INF/**'], dest: '/'},
-          {expand: true, cwd: '../result/', src: ['./OEBPS/**'], dest: '/'},
-          {expand: true, cwd: '../result/', src: ['./mimetype'], dest: '/'}
+          {expand: true, cwd: '../epub-con-result/', src: ['./META-INF/**'], dest: '/'},
+          {expand: true, cwd: '../epub-con-result/', src: ['./OEBPS/**'], dest: '/'},
+          {expand: true, cwd: '../epub-con-result/', src: ['./mimetype'], dest: '/'}
         ]
       }
     },
@@ -107,7 +107,7 @@ module.exports = function(grunt) {
           expand: true,                  // Enable dynamic expansion
           cwd: '../',                   // Src matches are relative to this path
           src: ['OEBPS/assets/images/*.{png,jpg,gif}'],   // Actual patterns to match
-          dest: '../result/'                  // Destination path prefix
+          dest: '../epub-con-result/'                  // Destination path prefix
         }]
       }
     }
