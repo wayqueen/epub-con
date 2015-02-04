@@ -14,28 +14,19 @@ module.exports = function(grunt) {
   grunt.initConfig({
     replace: {
       epub: {
-        src: ['../OEBPS/*.xhtml'],     // only search on xhtml files
+        src: ['../result/OEBPS/*.xhtml'],     // only search on xhtml files
         overwrite: true,               // destination directory or file
         replacements: [{
-          // remove separated inline tag which should be 
-          from: /<\/(b|i)>[ \n\r\t]*<(b|i)>/g,
+          // combine multiple inline tag as 
+          from: /<\/(b|i)>[ \n\r\t]*<\1>/g,
           to: ''
         }, {
-          // remove empty element: p|li|ol|b|i
-          from: /<(p|li|ol|b|i)[^>]*>[ \n\r\t]*<\/(p|li|ol|b|i)>/g,
+          from: /<(p|li|ol|b|i( |>))[^>]*?>[ \n\r\t]*<\/\1>/g,
           to: ''
         }, {
           // remove inline style using regex
           from: /(\sstyle=("|\')(.*?)("|\'))([a-z ]*)/g,      
           to: ''
-        }, {
-          // flatten 2 level of ol
-          from: /<(ol)[^>]*>[ \n\r\t]*<(ol)[^>]*>/g,      
-          to: '<ol>'
-        }, {
-          // flatten 2 level of /ol
-          from: /<\/(ol)>[ \n\r\t]*<\/(ol)>/g,      
-          to: '</ol>'
         }]
       }
     },
@@ -64,10 +55,16 @@ module.exports = function(grunt) {
       },
     },
     copy: {
+      workFiles: {
+        files: [
+          {expand: true, cwd: '../', src: ['META-INF/**'], dest: '../result/'},
+          {expand: true, cwd: '../', src: ['OEBPS/**'], dest: '../result/'},
+          {expand: true, cwd: '../', src: ['mimetype'], dest: '../result/'},
+        ]
+      },
       styles: {
         files: [
-          // includes files within path
-          {expand: false, src: ['OEBPS/*'], dest: '../', filter: 'isFile'},
+          {expand: true, src: ['OEBPS/*'], dest: '../result/', filter: 'isFile'},
         ],
       },
     },
@@ -79,9 +76,9 @@ module.exports = function(grunt) {
           mode: 'zip'
         },
         files: [
-          {src: ['../META-INF/**'], dest: '/'}, // includes files in path
-          {src: ['../mimetype'], dest: '/'}, // includes files in path
-          {src: ['../OEBPS/**'], dest: '/'}, // includes files in path
+          {expand: true, cwd: '../result/', src: ['./META-INF/**'], dest: '/'},
+          {expand: true, cwd: '../result/', src: ['./OEBPS/**'], dest: '/'},
+          {expand: true, cwd: '../result/', src: ['./mimetype'], dest: '/'}
         ]
       }
     },
@@ -105,6 +102,7 @@ module.exports = function(grunt) {
     'dev'
   ]);
   grunt.registerTask('dev', [
+    'copy:workFiles',
     'replace:epub',
     'prettify',
     'copy:styles'
