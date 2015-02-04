@@ -17,10 +17,11 @@ module.exports = function(grunt) {
         src: ['../result/OEBPS/*.xhtml'],     // only search on xhtml files
         overwrite: true,               // destination directory or file
         replacements: [{
-          // combine multiple inline tag as 
+          // combine multiple inline tag as one tag
           from: /<\/(b|i)>[ \n\r\t]*<\1>/g,
           to: ''
         }, {
+          // remove empty elememt
           from: /<(p|li|ol|b|i( |>))[^>]*?>[ \n\r\t]*<\/\1>/g,
           to: ''
         }, {
@@ -94,6 +95,21 @@ module.exports = function(grunt) {
           'OEBPS/*.xhtml',
         ]
       }
+    },
+    imagemin: {                          // Task
+      dynamic: {                         // Another target
+        options: {                       // Target options
+          // optimizationLevel: 3,
+          // svgoPlugins: [{ removeViewBox: false }],
+          // use: [mozjpeg()]
+        },
+        files: [{
+          expand: true,                  // Enable dynamic expansion
+          cwd: '../',                   // Src matches are relative to this path
+          src: ['OEBPS/assets/images/*.{png,jpg,gif}'],   // Actual patterns to match
+          dest: '../result/'                  // Destination path prefix
+        }]
+      }
     }
   });
 
@@ -107,11 +123,18 @@ module.exports = function(grunt) {
     'prettify',
     'copy:styles'
   ]);
-  grunt.registerTask('update', [
-    'copy:styles'
+  grunt.registerTask('image', [
+    'imagemin'
   ]);
   grunt.registerTask('build', [
     'compress'
   ]);
+  grunt.registerTask('epub', [
+    'copy:workFiles',
+    'replace:epub',
+    'prettify',
+    'copy:styles',
+    'imagemin',
+    'compress',
+  ]);
 };
-
