@@ -26,7 +26,15 @@ module.exports = function(grunt) {
           to: ''
         }, {
           // remove inline style using regex
-          from: /(\sstyle=("|\')(.*?)("|\'))([a-z ]*)/g,      
+          from: /(\sstyle=("|\')(.*?)("|\'))([a-z ]*)/g,
+          to: ''
+        }, {
+          // replace img wrapped with p with the same image wrapped in </div>
+          from: /(<p[^>]*?>)[ \n\r\t]*(<img[^>]*?>)[ \n\r\t]*<\/p>/g,
+          to: '<div>$2</div>'
+        }, {
+          // remove layout js
+          from: '<script src="JS/layout.js" type="text/javascript"></script>',
           to: ''
         }]
       }
