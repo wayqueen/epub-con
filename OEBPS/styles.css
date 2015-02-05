@@ -1,43 +1,196 @@
-#content{
-font-family : sans-serif,Calibri,Arial;
-margin: 5px 18px;
+@page {
+	margin: 10px;
 }
 
-div>p{
-text-indent : 25px;
-text-align : justify;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
 }
 
-
-.no-heading{
-display : none;
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
 }
+ol, ul, li, dl, dt, dd{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body{
+    text-align: justify;
+    line-height: 140%;
+}
+
+h1{
+	text-indent: 0;
+	text-align: left;
+	/*margin: 100px 0 0 0;*/
+	font-size: 2.0em;
+	font-weight: bold;
+	page-break-before: always;
+	line-height: 150%;
+	/*gets squished otherwise on ADE */
+}
+
+h2{
+	text-indent: 0;
+	text-align: left;
+	/*margin: 50px 0 0 0;*/
+	font-size: 1.5em;
+	font-weight: bold;
+	page-break-before: always;
+	line-height: 135%;
+	/*get squished otherwise on ADE */
+}
+
+h3{
+	text-indent: 0;
+	text-align: left;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+h4{
+	text-indent: 0;
+	text-align: left;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+h5{
+	text-indent: 0;
+	text-align: left;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+h6{
+	text-indent: 0;
+	text-align: left;
+	font-size: 1.0em;
+	font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6{
+	-webkit-hyphens: none !important;
+	hyphens: none;
+	page-break-after: avoid;
+	page-break-inside: avoid;
+}
+
 p{
-text-align : justify;
+	text-indent: 1.25em;
+	margin: 0;
+	widows: 2;
+	orphans: 2;
 }
 
-img.frameGraphics  
-{
+img{
+	width: 100% !important;
+	height:auto !important;
+	-webkit-hyphens: none !important;
+	page-break-after: avoid;
+	page-break-inside: avoid !important;
 }
 
-p.Gambar {text-align:center;margin-left:0;margin-right:0;margin-top:8.016px;margin-bottom:8.016px;border:none;padding:0;color:#00A3D7;text-indent: 0}
-     
-p.Contents1 {margin-left:0;margin-right:0;margin-top:0;border:none;padding:0;text-indent:0;}
-     
-p.Contents3 {margin-left:37.718403px;margin-right:0;margin-top:0;border:none;padding:0;text-indent:0;}
- 
-p.Contents2 {margin-left:18.864px;margin-right:0;margin-top:0;border:none;padding:0;text-indent:0;}
-
-.img_head{
+ul{
+	margin: 1em 0 0 2em;
+	text-align: left;
 }
 
-.frameGraphics {margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;border:none;padding:0;}
-     
-.frameFrame {text-align:center;margin-left:7.5936px;margin-right:7.5936px;margin-top:7.5936px;margin-bottom:7.5936px;padding:5.6735997px;font-size:16.0px}
+ol{
+	margin: 1em 0 0 2em;
+	text-align: left;
+}
 
-.frameGraphics p {margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;}
+table{
+	margin: 1.0em auto;
+}
 
-.frameFrame p {margin-left:7.5936px;margin-right:7.5936px;margin-top:7.5936px;margin-bottom:7.5936px;}
+tr, th, td{
+	margin: 0;
+	padding: 2px;
+	border: 1px solid black;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+.no-heading,
+.invisible{
+	display : none;
+}
+
+.alignright{
+	text-align: right;
+}
+
+.signature{
+	text-align: right;
+	margin-right: 50px;
+	margin-top: 100px;
+}
+
+// old style table of contents
+
+.Contents1,
+.content-1{
+}
+
+.Contents2,
+.content-2{
+	margin-left:18px;
+}
+
+.Contents3,
+.content-3{
+	margin-left:37px;
+}
+
+
+/*#content{
+
+p.Gambar {
+	text-align:center;
+	margin-left:0;
+	margin-right:0;
+	margin-top:8.016px;
+	margin-bottom:8.016px;
+	border:none;
+	padding:0;
+	color:#00A3D7;
+	text-indent: 0
+}
+
+	
+.frameFrame {
+	text-align:center;
+	margin-left:7.5936px;
+	margin-right:7.5936px;
+	margin-top:7.5936px;
+	margin-bottom:7.5936px;
+	padding:5.6735997px;
+	font-size:16.0px
+}
+
+.frameGraphics p {
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+	margin-bottom:0;
+}
+
+.frameFrame p {
+	margin-left:7.5936px;
+	margin-right:7.5936px;
+	margin-top:7.5936px;
+	margin-bottom:7.5936px;
+}
 
 p.hangingIndent{
 	padding-left: 22px;
@@ -55,7 +208,8 @@ p.hangingIndent{
 	vertical-align: top;
 }
 
-h2, h3{
+h2,
+h3{
 	color:#00A3D7;
 }
 
@@ -71,14 +225,18 @@ h2, h3{
 .tabel11 th p{
 	text-align: center;
 }
-.tabel11, .tabel11 th, .tabel11 td{
+.tabel11,
+.tabel11 th,
+.tabel11 td{
 	border: 1px solid #000;
 }
 .small{
 	font-size: 9px;
 }
 .title{
-	text-align:center;color:#00A3D7;font-size:18px;
+	text-align:center;
+	color:#00A3D7;
+	font-size:18px;
 }
 .story{
 	background-color: #E0F3F7;
@@ -120,3 +278,4 @@ p .info_left{
 ol li{
 	text-indent: 0;
 }
+*/
