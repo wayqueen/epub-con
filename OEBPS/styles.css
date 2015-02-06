@@ -212,13 +212,28 @@ tr, th, td{
 	padding: 5px;
 	position: relative;
 }
-.ayo-berlatih-text, .ayo-melengkapi-text, .ayo-bekerjasama-text{
+.akhir2{
+	border-radius: 30px;
+	margin: 20px;
+	padding: 5px;
+	position: relative;
+	background-color: #ffe9d7;
+}
+.ringkasan{
+	width:40% !important;
+	height: auto;
+	position: relative;
+	top: -30px;
+	left: 0px;
+}
+
+.ringkasan-text, .ayo-berlatih-text, .ayo-melengkapi-text, .ayo-bekerjasama-text{
 	position: relative;
 	top: -30px;
 }
 
 .tahukah-kamu{
-	width: 20%;
+	width: 40%;
 	background-color: #ffe9d7;
 	border-radius:10px;
 	margin: 10px;
