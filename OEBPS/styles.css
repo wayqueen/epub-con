@@ -153,23 +153,116 @@ tr, th, td{
 }
 
 /*Class Baru*/
+/*BOXES*/
 .box p, .box ol, .box li{
 	text-indent: 0.25em;
 }
-.box{
+.center{
 	margin: auto;
 }
-.box2{
-	margin: 0;
+.box{
+	margin: 10px 0px;
 }
-.preview{
-	/*padding: 10px 100px;*/
-	padding: 10px 0px;
+.box-border1{
+	border-bottom: 5px solid;
+	border-top: 5px solid;
+	padding: 10px;
+}
+.box-border2{
+	border: 8px solid;
+	padding: 10px;
+}
+.box-round1{
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px;
+}
+.box-round2{
+	border-radius: 30px;
+	padding: 10px;
+	margin: 20px;
+}
+.box-floatleft{
+	float: left;
+	margin-right: 40px;
+}
+.box-floatright{
+	float: right;
+	margin-left: 40px;
+}
+.blue-line{
+	border-color: #00A3D7;
+}
+.box-preview{
 	width: 90%;
-	border-bottom: 5px solid #00A3D7;
-	border-top: 5px solid #00A3D7;
 }
-.caption{
+.box-tahukah1{
+	width: 30%;
+	background-color: #ffe9d7;
+	margin-top: 40px;
+}
+.box-tahukah2{
+	width: 60%;
+	background-color: #ffe9d7;
+	margin-top: 40px;
+}
+.box-tahukah3{
+	width: 100%;
+	background-color: #ffe9d7;
+	margin-top: 40px;
+}
+.box-ayo{
+	border-color: #c68c53;
+	margin-top: 50px;
+}
+.box-ringkasan{
+	background-color: #ffe9d7;
+}
+.judul-tahukah::before{
+	content:url('assets/images/tahukah.png');
+	width: 100%;
+	height: auto;
+	position: relative;
+	top: -50px;
+}
+.judul-ayo-berlatih::before{
+	content:url('assets/images/berlatih.png');
+	width: 100%;
+	height: auto;
+	position: relative;
+	top: -40px;
+}
+.judul-ayo-melengkapi::before{
+	content:url('assets/images/melengkapi.png');
+	width: 100%;
+	height: auto;
+	position: relative;
+	top: -40px;
+}
+.judul-ayo-bekerja::before{
+	content:url('assets/images/kerjasama.png');
+	width: 100%;
+	height: auto;
+	position: relative;
+	top: -40px;
+}
+.judul-ringkasan::before{
+	content:url('assets/images/ringkasan.png');
+	width: 100%;
+	height: auto;
+	position: relative;
+	top: -40px;
+}
+.konten-tahukah{
+	margin-top: -50px;
+}
+.konten-ayo, .konten-ringkasan{
+	margin-top: -40px;
+}
+
+
+/*TEXT*/
+.text-caption{
 	margin-bottom: 10px;
 	color: #00A3D7;
 	text-indent: 0.25em;
@@ -178,9 +271,6 @@ tr, th, td{
 	color: #484e67;
 	margin-bottom: 20px;
 }
-.sub-content{
-	margin-left: 80px;
-}
 .panah{
 	margin-bottom: 0px !important;
 }
@@ -188,7 +278,6 @@ tr, th, td{
 	content:url('assets/images/panah.png');
 	width: 70px;
 	height: auto;
-	margin-left: -80px;
 	vertical-align: middle;
 	display: inline-block;
 }
@@ -198,58 +287,16 @@ tr, th, td{
 .table-pink-muda{
 	background-color: #ffccff;
 }
-.ayo-berlatih, .ayo-melengkapi, .ayo-bekerjsama{
-	position: relative;
-	top: -30px;
-	margin: 0px !important;
-	padding: 0px !important;
 
-}
-.akhir{
-	border-radius: 30px;
-	border: 8px solid #c68c53;
-	margin: 20px;
-	padding: 5px;
-	position: relative;
-}
-.akhir2{
-	border-radius: 30px;
-	margin: 20px;
-	padding: 5px;
-	position: relative;
-	background-color: #ffe9d7;
-}
-.ringkasan{
-	width:40% !important;
-	height: auto;
-	position: relative;
-	top: -30px;
-	left: 0px;
-}
-
-.ringkasan-text, .ayo-berlatih-text, .ayo-melengkapi-text, .ayo-bekerjasama-text{
-	position: relative;
-	top: -30px;
-}
-
-.tahukah-kamu{
-	width: 40%;
-	background-color: #ffe9d7;
-	border-radius:10px;
-	margin: 10px;
-	margin-right: 40px;
-	padding: 10px;
-	float: left;
-}
-.sumber{
+.text-sumber{
 	text-align: right;
 	font-size: 80%;
 }
-.perintah{
+.text-perintah{
 	color:  #cc0033;
 	font-weight: bold
 }
-.contoh{
+.text-contoh{
 	background-color: #ffe9d7;
 	padding: 5px 5px;
 	margin: 0px;
